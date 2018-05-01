@@ -9,10 +9,9 @@ import VueApollo from 'vue-apollo';
 
 import App from './App.vue';
 import router from './router.js';
-import { GRAPHCMS_API } from './config.js';
 
 const apolloClient = new ApolloClient({
-  link: new HttpLink({ uri: GRAPHCMS_API }),
+  link: new HttpLink({ uri: `https://api.graphcms.com/simple/v1/${API_KEY}`, }),
   cache: new InMemoryCache()
 })
 
