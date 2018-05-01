@@ -9,10 +9,7 @@ import VueApollo from 'vue-apollo';
 
 import App from './App.vue';
 import router from './router.js';
-import config from './config.js';
-
-// Replace this with your project's endpoint
-const GRAPHCMS_API = config.GRAPHCMS_API;
+import { GRAPHCMS_API } from './config.js';
 
 const apolloClient = new ApolloClient({
   link: new HttpLink({ uri: GRAPHCMS_API }),

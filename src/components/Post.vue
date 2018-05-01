@@ -5,20 +5,18 @@
   <div v-else>
     <article>
       <h1>{{post.title}}</h1>
-      <div class='placeholder'>
-        <!-- <img
-          :alt="post.title"
-          :src="`https://media.graphcms.com/resize=w:650,h:366,fit:crop/${post.coverImage.handle}`"
-        /> -->
-      </div>
+      <commit-chart></commit-chart>
       <vue-markdown>{{post.content}}</vue-markdown>
     </article>
   </div>
 </template>
 
 <script>
-  import gql from 'graphql-tag'
-  import VueMarkdown from 'vue-markdown'
+  // chart component
+  import CommitChart from './chart-components/CommitChart';
+  // markdown support
+  import VueMarkdown from 'vue-markdown';
+  import gql from 'graphql-tag';
 
   const post = gql`
     query post($slug: String!) {
@@ -51,7 +49,7 @@
         }
       }
     },
-    components: { VueMarkdown }
+    components: { VueMarkdown, CommitChart }
   }
 </script>
 
